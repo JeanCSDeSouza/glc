@@ -1,4 +1,4 @@
-package br.com.bb.model;
+package br.com.bb.persistense.model;
 
 import jakarta.persistence.*;
 
@@ -17,7 +17,7 @@ public class PbcoSeldSnlAv {
     @Column(name = "CD_PRF_AG_CAD", nullable = false)
     private Integer cdPrfAgCad;
 
-    @OneToMany(mappedBy = "pbcoSeldSnlAv")
+    @OneToMany(mappedBy = "pbcoSeldSnlAvs")
     private Set<ExeaPcePbcoSeld> exeaPcePbcoSelds = new LinkedHashSet<>();
 
     public PbcoSeldSnlAvId getId() {

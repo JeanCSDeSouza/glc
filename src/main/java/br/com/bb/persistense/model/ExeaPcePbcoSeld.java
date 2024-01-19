@@ -1,4 +1,4 @@
-package br.com.bb.model;
+package br.com.bb.persistense.model;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
@@ -9,8 +9,8 @@ import java.time.Instant;
 @Entity
 @Table(name = "EXEA_PCE_PBCO_SELD")
 public class ExeaPcePbcoSeld {
-    @Column(name = "CD_PCE_CMPS_AVS", nullable = false)
-    private Short cdPceCmpsAvs;
+    @EmbeddedId
+    private ExeaPcePbcoSeldId id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.RESTRICT)
@@ -29,12 +29,12 @@ public class ExeaPcePbcoSeld {
     @OnDelete(action = OnDeleteAction.RESTRICT)
     private PbcoSeldSnlAv pbcoSeldSnlAvs;
 
-    public Short getCdPceCmpsAvs() {
-        return cdPceCmpsAvs;
+    public ExeaPcePbcoSeldId getId() {
+        return id;
     }
 
-    public void setCdPceCmpsAvs(Short cdPceCmpsAvs) {
-        this.cdPceCmpsAvs = cdPceCmpsAvs;
+    public void setId(ExeaPcePbcoSeldId id) {
+        this.id = id;
     }
 
     public EstExeaPce getCdEstExeaPce() {

@@ -1,4 +1,4 @@
-package br.com.bb.model;
+package br.com.bb.persistense.model;
 
 import jakarta.persistence.*;
 
@@ -40,7 +40,7 @@ public class PrmSnlAv {
     @Column(name = "NR_TAM_TIP_DADO", nullable = false)
     private Integer nrTamTipDado;
 
-    @OneToMany(mappedBy = "prmSnlAv")
+    @OneToMany(mappedBy = "cdPrmSnlAvs")
     private Set<OrdCmpsSnlPrm> ordCmpsSnlPrms = new LinkedHashSet<>();
 
     public Integer getId() {

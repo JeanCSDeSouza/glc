@@ -1,4 +1,4 @@
-package br.com.bb.model;
+package br.com.bb.persistense.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,7 +9,7 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "CRTC_SNL_AVS")
-public class CrtcSnlAv {
+public class CrtcSnlAv{
     @Id
     @Column(name = "CD_CRTC", nullable = false)
     private Integer id;

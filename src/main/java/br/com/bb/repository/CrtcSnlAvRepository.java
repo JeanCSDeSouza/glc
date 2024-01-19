@@ -1,6 +1,6 @@
 package br.com.bb.repository;
 
-import br.com.bb.model.CrtcSnlAv;
+import br.com.bb.persistense.model.CrtcSnlAv;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 

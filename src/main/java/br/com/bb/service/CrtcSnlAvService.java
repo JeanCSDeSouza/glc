@@ -1,10 +1,10 @@
 package br.com.bb.service;
 
+import br.com.bb.persistense.model.CrtcSnlAv;
 import br.com.bb.repository.CrtcSnlAvRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
-import br.com.bb.model.CrtcSnlAv;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
