@@ -23,6 +23,23 @@ public class CrtcSnlAv{
     @Column(name = "CD_USU_RSP_CRTC", nullable = false, length = 8)
     private String cdUsuRspCrtc;
 
+    /**
+     * Construtor padrão definido para que posssa ser utilizada pelo framework de ORM
+     */
+    public CrtcSnlAv() {
+    }
+
+    /**
+     * Construtor privado para uso da classe BUilder
+     * @param builder Objeto da classe internta Builder.
+     */
+    private CrtcSnlAv(Builder builder) {
+        this.id = builder.id;
+        this.nmCrtc = builder.nmCrtc;
+        this.tsAtlCrtc = builder.tsAtlCrtc;
+        this.cdUsuRspCrtc = builder.cdUsuRspCrtc;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -53,6 +70,43 @@ public class CrtcSnlAv{
 
     public void setCdUsuRspCrtc(String cdUsuRspCrtc) {
         this.cdUsuRspCrtc = cdUsuRspCrtc;
+    }
+    /*
+    * Classe interna que implementa o padrão builder permitindo que a classe extrena seja
+    * criada com o padrão builder().build()
+     */
+    public static class Builder{
+        private Integer id;
+        private String nmCrtc;
+        private Instant tsAtlCrtc;
+        private String cdUsuRspCrtc;
+
+        public Builder(){
+        }
+
+        public CrtcSnlAv build(){
+            return new CrtcSnlAv(this);
+        }
+
+        public Builder id(Integer id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder nmCrtc(String nmCrtc) {
+            this.nmCrtc = nmCrtc;
+            return this;
+        }
+
+        public Builder tsAtlCrtc(Instant tsAtlCrtc) {
+            this.tsAtlCrtc = tsAtlCrtc;
+            return this;
+        }
+
+        public Builder cdUsuRspCrtc(String cdUsuRspCrtc) {
+            this.cdUsuRspCrtc = cdUsuRspCrtc;
+            return this;
+        }
     }
 
 }
